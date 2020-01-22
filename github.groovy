@@ -12,20 +12,20 @@ def call(String repository, String revision, String tag,
   }
 
   withCredentials([usernamePassword(
-    credentialsId: crendential,
-    passwordVariable: 'GIT_PASSWORD',
-    usernameVariable: 'GIT_USERNAME'
+    credentialsId: git,
+    passwordVariable: 'git123',
+    usernameVariable: 'gitlab'
   )]) {
     // tag repository
     sh """
-    mkdir ${tempFolder}
-    cd ${tempFolder}
+    mkdir ${temp}
+    cd ${temp}
     git init
     git remote add origin https://github.com/${repository}.git
     git fetch origin
     git checkout ${revision}
     git tag ${tag}
-    git push --tags 'https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${repository}.git'
+    git push --tags 'https://${gitlab}:${git123}@github.com/${repository}.git'
     """
   }
 
