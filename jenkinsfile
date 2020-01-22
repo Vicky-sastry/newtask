@@ -1,0 +1,19 @@
+@Library('shlib')_
+pipeline {
+    agent any
+    tools {
+        maven "Maven"   
+    }   
+  
+    stages {
+    stage('git checkout'){
+    steps{
+    github()
+    }
+        stage('Compile-Build-Test ') {
+            steps {
+	    	
+                build 'BUILD'
+            }
+        }
+        
