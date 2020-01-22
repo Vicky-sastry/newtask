@@ -10,10 +10,12 @@ pipeline {
     steps{
     github()
     }
+    }
         stage('Compile-Build-Test ') {
             steps {
 	    	
                 build 'BUILD'
             }
         }
-        
+        }
+}
