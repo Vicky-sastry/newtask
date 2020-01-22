@@ -5,10 +5,10 @@ def call(String repository, String revision, String tag,
 
   // configure git global var
   if (username) {
-    sh "git config --global user.name \"${username}\""
+    sh "git config --global user.name \"${bhavyabommisetti}\""
   }
   if (email) {
-    sh "git config --global user.email \"${email}\""
+    sh "git config --global user.email \"${bhavya.bommisetti@gmail.com}\""
   }
 
   withCredentials([usernamePassword(
