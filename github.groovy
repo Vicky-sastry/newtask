@@ -21,11 +21,11 @@ def call(String repository, String revision, String tag,
     mkdir ${temp}
     cd ${temp}
     git init
-    git remote add origin https://github.com/${repository}.git
+    git remote add origin https://github.com/${example}.git
     git fetch origin
     git checkout ${revision}
     git tag ${tag}
-    git push --tags 'https://${gitlab}:${git123}@github.com/${repository}.git'
+    git push --tags 'https://${gitlab}:${git123}@github.com/${example}.git'
     """
   }
 
